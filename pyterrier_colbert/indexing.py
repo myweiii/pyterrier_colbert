@@ -240,6 +240,8 @@ class CollectionEncoder_Generator(CollectionEncoder):
         for line_idx, line in zip(range(offset, endpos), lines):
             pid = line["docid"]
             passage = line["text"]
+            if passage == "":
+                passage = " "
             if prepend_title:
                 title = line["title"]
                 passage = title + ' | ' + passage
